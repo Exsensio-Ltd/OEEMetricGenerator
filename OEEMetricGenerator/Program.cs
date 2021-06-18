@@ -5,12 +5,18 @@ using System.Text.Json;
 
 namespace OEEMetricGenerator
 {
-    /// <summary>
-    /// -url=http://localhost:51803 -product=TestProduct -station=TestStation -breakDuration=00:00:00 -idealDuration=00:00:50.131 -maxTimeout=40 -maxTimeout=70
-    /// </summary>
     public class Program
     {
-        
+        /// <param name="args">
+        /// Array must contains next arguments
+        ///     -url=http://localhost:51803
+        ///     -product=TestProduct
+        ///     -station=TestStation
+        ///     -breakDuration=00:00:00
+        ///     -idealDuration=00:00:50.131
+        ///     -maxTimeout=40
+        ///     -maxTimeout=70
+        /// </param>
         static void Main(string[] args)
         {
             var (
