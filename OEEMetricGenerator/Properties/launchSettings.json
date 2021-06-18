@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OEEMetricGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "-url=http://localhost:51803 -product=TestProduct -station=TestStation -breakDuration=00:00:00 -idealDuration=00:00:50.131 -maxTimeout=40 -maxTimeout=70"
+    }
+  }
+}
