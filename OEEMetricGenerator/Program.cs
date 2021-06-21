@@ -14,8 +14,9 @@ namespace OEEMetricGenerator
         ///     -station=TestStation
         ///     -breakDuration=00:00:00
         ///     -idealDuration=00:00:50.131
-        ///     -maxTimeout=40
-        ///     -maxTimeout=70
+        ///     -totalProducts=140
+        ///     -maxTimeout=20
+        ///     -maxTimeout=90
         /// </param>
         static void Main(string[] args)
         {
@@ -25,6 +26,7 @@ namespace OEEMetricGenerator
                 station,
                 breakDuration,
                 idealDuration,
+                totalProducts,
                 minTimeout,
                 maxTimeout
             ) = ParseArgs(args);
@@ -50,6 +52,7 @@ namespace OEEMetricGenerator
                     StationName = station,
                     ProductionBreakDuration = breakDuration,
                     ProductionIdealDuration = idealDuration,
+                    TotalProducts = totalProducts,
                     CreateTime = createdDate
                 });
 
@@ -63,9 +66,9 @@ namespace OEEMetricGenerator
             }
         }
 
-        private static (string, string, string, string, string, int, int) ParseArgs(string[] args)
+        private static (string, string, string, string, string, int, int, int) ParseArgs(string[] args)
         {
-            if (args.Length != 7)
+            if (args.Length != 8)
                 throw new ArgumentException();
 
             var url = args[0].Split("=")[1];
@@ -73,10 +76,11 @@ namespace OEEMetricGenerator
             var station = args[2].Split("=")[1];
             var breakDuration = args[3].Split("=")[1];
             var idealDuration = args[4].Split("=")[1];
-            var minTimeout = int.Parse(args[5].Split("=")[1]);
-            var maxTimeout = int.Parse(args[6].Split("=")[1]);
+            var totalProducts = int.Parse(args[5].Split("=")[1]);
+            var minTimeout = int.Parse(args[6].Split("=")[1]);
+            var maxTimeout = int.Parse(args[7].Split("=")[1]);
 
-            return (url, product, station, breakDuration, idealDuration, minTimeout, maxTimeout);
+            return (url, product, station, breakDuration, idealDuration, totalProducts, minTimeout, maxTimeout);
         }
     }
 }
