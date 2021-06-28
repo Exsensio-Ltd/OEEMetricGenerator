@@ -2,7 +2,7 @@
   "profiles": {
     "OEEMetricGenerator": {
       "commandName": "Project",
-      "commandLineArgs": "-url=http://localhost:51803 -product=TestProduct -station=TestStation -breakDuration=00:01:42 -idealDuration=00:00:50.131 -totalProducts=140 -maxTimeout=20 -maxTimeout=90"
+      "commandLineArgs": "-url=http://localhost:51803 -product=NewProduct -station=AssemblyStation -breakDuration=00:01:42 -idealDuration=00:00:50.131 -totalProducts=130 -maxTimeout=40 -maxTimeout=100"
     }
   }
 }
